@@ -83,9 +83,7 @@
           title: 'Zamówienie zostało złożone!',
           text: 'Dziękujemy za korzystanie z naszych usług'
         })
-        setTimeout(() => {
-          router.push('/orders')
-        }, 300)
+        router.push('/orders')
       })
       .catch(() => {
         notify({

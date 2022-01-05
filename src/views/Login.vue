@@ -47,9 +47,7 @@ const attemptLogin = () => {
             title: user?.name ? `Witaj, ${user.name}` : 'Witaj!',
             text: 'Dziękujemy za korzystanie z naszego serwisu',
           });
-          setTimeout(() => {
-            router.push('/')
-          }, 500)
+          router.push('/')
         })
     })
     .catch((error) => {
