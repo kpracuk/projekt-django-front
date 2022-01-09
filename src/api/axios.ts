@@ -8,12 +8,12 @@ const getCookie = (name: string) => {
 }
 
 const instance = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
+  baseURL: import.meta.env.BASE_URL,
   withCredentials: true
 })
 
 axios.interceptors.request.use((config) => {
-  config.baseURL = 'http://127.0.0.1:8000'
+  config.baseURL = import.meta.env.BASE_URL
   config.withCredentials = true
   if(config.headers?.common) {
     config.headers['X-CSRFToken'] = getCookie('csrftoken')
