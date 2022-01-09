@@ -43,7 +43,10 @@
     name: String,
     description: String,
     quantity: Number,
-    price: Number,
+    price: {
+      type: Number,
+      default: () => 0
+    },
     productId: Number,
     buyable: {
       type: Boolean,

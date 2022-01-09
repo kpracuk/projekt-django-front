@@ -47,7 +47,10 @@
   const props = defineProps({
     orderId: Number,
     productName: String,
-    price: Number,
+    price: {
+      type: Number,
+      default: () => 0
+    },
     quantity: Number,
     date: String,
     status: String,

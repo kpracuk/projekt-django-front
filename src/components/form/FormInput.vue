@@ -9,7 +9,7 @@
         class="p-2 border-2 border-gray-500 focus:border-blue-500 transition bg-gray-900 text-white rounded-md focus:outline-none"
         :class="{ 'border-red-500': errors.length > 0 }"
         :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
+        @input="$emit('update:modelValue', eventTarget($event))"
     />
     <div class="flex flex-col text-red-500 font-bold text-xs" v-if="errors.length > 0">
       <span v-for="(error, key) in errors" :key="key">{{ error }}</span>
@@ -38,4 +38,8 @@ const props = defineProps({
 const emits = defineEmits([
   'update:modelValue'
 ])
+
+const eventTarget = (event: Event) => {
+  return (event.target as HTMLInputElement).value
+}
 </script>
